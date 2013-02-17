@@ -1,0 +1,136 @@
+/*
+Theme Name: Eewee BT
+Theme URI: http://www.eewee.fr/developpement-cms/wordpress/themes/
+Author: eewee, Michael DUMONTET
+Author URI: http://www.eewee.fr/
+Description: The theme for WordPress developped by eewee.fr. He use the framework css "bootstrap twitter". Responsive design template. it will fit properly on tablets, smartphones, etc. ... Easy to use you can configure wordpress in the administration of various tools such as social networks, contact companies, ... Also use a system of distribution of your news via a shortcode (tab, accordion). Features quick and simple to use.
+Version: 0.4.7
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, white, one-column, left-sidebar, right-sidebar, theme-options, editor-style
+Text Domain: eewee-bt
+*/
+
+/*
+ *  SOMMAIRE :
+ *  - CONTAINER
+ *  - LINK
+ *  - FORM
+ *  - TABLE
+ *  - FONT
+ *  - LIST
+ *  - BLOC
+ *  - TEMP
+ */
+ 
+ /*
+  * NOTE :
+  * -   xxx 
+  */
+
+/* =LINK
+--------------------------------------*/
+.eewee-container-standard{
+    max-width: 940px;
+    margin: auto;
+}
+.eewee-container-large{
+    max-width: 1440px;
+    margin: auto;
+}
+.eewee-container-medium{
+    max-width: 1200px;
+    margin: auto;
+}
+.eewee-container-small{
+    max-width: 780px;
+    margin: auto;
+}
+
+/* =LINK
+--------------------------------------*/
+.menu-footer-container ul.menu a{
+    font-weight: bold;
+}
+.menu-footer-container ul.sub-menu a{
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+
+/* =FORM
+--------------------------------------*/
+
+
+/* =TABLE
+--------------------------------------*/
+
+
+/* =TAB
+--------------------------------------*/
+.tab-content h3, .accordion-inner h3{
+    line-height: inherit;
+}
+
+
+/* =FONT
+--------------------------------------*/
+.news-home{
+    text-align: justify;
+}
+.txt-justify, .txt-justify p{
+    text-align: justify;
+}
+
+/* =LIST
+--------------------------------------*/
+.menu-footer-container ul{
+    list-style: none;
+    display: inline;
+}
+.menu-footer-container ul>li{
+    display: table-cell;
+    width: auto;
+    padding: 0 2em 0 0;
+}
+.menu-footer-container ul.sub-menu li{
+    display: table-row;
+    width: auto;
+    padding: 0 0 0 2em;
+}
+
+/* =BLOC
+--------------------------------------*/
+.about-author{
+    border: 1px solid grey;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    
+    padding: 10px;
+}
+
+/* =DIVERS
+--------------------------------------*/
+.sticky{}
+.alignright{ float: right; }
+.alignleft{ float: left; }
+.aligncenter{}
+
+
+/* =TEMP
+--------------------------------------*/
+#page{
+/*    border: 1px solid red;*/
+}
+.row-fluid{
+/*    border: 1px solid green;*/
+}

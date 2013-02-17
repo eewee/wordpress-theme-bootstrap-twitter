@@ -1,0 +1,38 @@
+== CHANGELOG ==
+* Theme based on the framework CSS "Bootstrap Twitter". Responsive design Wordpress theme
+
+== VERSION ==
+
+= 0.4.7 =
+* Minor change
+
+= 0.4.6 =
+* Minor change
+
+= 0.4.5 =
+* Minor change
+
+= 0.4.4 =
+* Minor change
+
+= 0.4.3 =
+* Change screenshot theme
+
+= 0.4.2 =
+* Change theme name and screenshot
+
+= 0.4.1 =
+* Change screenshot
+
+= 0.4 =
+* Recommanded : text domain problems.
+
+= 0.3 =
+* Update carousel (administration of the carousel, possible via the wordpress admin).
+* Bug fix : warning on the home page.
+
+= 0.2 =
+* Minor update.
+
+= 0.1 =
+* First version theme.
