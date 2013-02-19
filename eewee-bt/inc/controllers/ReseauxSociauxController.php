@@ -1,7 +1,8 @@
 <?php 
-if( !class_exists(ReseauxSociauxController)){
+//namespace FrEeweeThemeEeweeBtReseauxSociauxController;
+//if( !class_exists(ReseauxSociauxController)){
 	class ReseauxSociauxController{
-		
+		/*
 		public $tbl_reseauxSociaux = array(
 			"facebook"	=> array(
 				"img_small"		=> "facebook_s.png",
@@ -22,7 +23,8 @@ if( !class_exists(ReseauxSociauxController)){
 				"url"			=> RS_URL_FLICKR
 			)
 		);
-		
+		*/
+            
 		/**
 		 * 
 		 * init
@@ -40,37 +42,56 @@ if( !class_exists(ReseauxSociauxController)){
 		 * SOURCE : http://www.presse-citron.net/10-facons-dintegrer-twitter-dans-un-site-ou-un-blog
 		 * SOURCE : http://twitter.com/about/resources/widgets
 		 * SOURCE : http://twitter.com/about/resources/widgets/widget_profile
+                 * @param string $user (ex:http://twitter.com/michaeldumontet)
+                 * @param int $qty
+                 * @param string $w
+                 * @param string $h
+                 * @param string $themeBg
+                 * @param string $themeCo
+                 * @param string $tweetsBg
+                 * @param string $tweetsCo
+                 * @param string $tweetsLi
 		 */
-		public function twWidgetProfil($user='michaeldumontet', $qty='10', $w='auto', $h='320', $themeBg='01488e', $themeCo='ffffff', $tweetsBg='ffffff', $tweetsCo='000000', $tweetsLi='08C'){
-			return "
-			<script charset='utf-8' src='http://widgets.twimg.com/j/2/widget.js'></script>
-			<script>
-			new TWTR.Widget({
-			  version: 2,
-			  type: 'profile',
-			  rpp: '".$qty."',
-			  interval: 30000,
-			  width: '".$w."',
-			  height: '".$h."',
-			  theme: {
-			    shell: {
-			      background: '#".$themeBg."',
-			      color: '#".$themeCo."'
-			    },
-			    tweets: {
-			      background: '#".$tweetsBg."',
-			      color: '#".$tweetsCo."',
-			      links: '#".$tweetsLi."'
-			    }
-			  },
-			  features: {
-			    scrollbar: true,
-			    loop: false,
-			    live: true,
-			    behavior: 'all'
-			  }
-			}).render().setUser('".$user."').start();
-			</script>";
+		public function twWidgetProfil($user='', $qty='10', $w='auto', $h='320', $themeBg='01488e', $themeCo='ffffff', $tweetsBg='ffffff', $tweetsCo='000000', $tweetsLi='08C'){
+                        $options = get_option('eewee_options');
+                        $user = str_replace( "http://", "", $options['eewee_social_twitter'] );
+                        $user = str_replace( "www.", "", $user );
+                        $user = str_replace( "twitter.com", "", $user );
+                        $user = str_replace( "/", "", $user );
+                        $user = str_replace( "!", "", $user );
+                        $user = str_replace( "#", "", $user );
+
+                        if( !empty($user) ){
+                            return "
+                            <script charset='utf-8' src='http://widgets.twimg.com/j/2/widget.js'></script>
+                            <script>
+                            new TWTR.Widget({
+                              version: 2,
+                              type: 'profile',
+                              rpp: '".$qty."',
+                              interval: 30000,
+                              width: '".$w."',
+                              height: '".$h."',
+                              theme: {
+                                shell: {
+                                  background: '#".$themeBg."',
+                                  color: '#".$themeCo."'
+                                },
+                                tweets: {
+                                  background: '#".$tweetsBg."',
+                                  color: '#".$tweetsCo."',
+                                  links: '#".$tweetsLi."'
+                                }
+                              },
+                              features: {
+                                scrollbar: true,
+                                loop: false,
+                                live: true,
+                                behavior: 'all'
+                              }
+                            }).render().setUser('".$user."').start();
+                            </script>";
+                        }
 		}
 		
 	   /**
@@ -217,7 +238,7 @@ if( !class_exists(ReseauxSociauxController)){
 		
                 /**
 		 * fb : Like Box
-                 * @param string $namePage
+                 * @param string $namePage (ex: http://www.facebook.com/eeweefr)
                  * @param int $w
                  * @param int $h
                  * @param bool $showfaces
@@ -225,10 +246,14 @@ if( !class_exists(ReseauxSociauxController)){
                  * @param bool $header
                  * @return string 
                  */
-		public function fbLikeBox($namePage='eeweefr', $w='auto', $h='410', $showfaces='true', $stream='true', $header='false'){
-			return '<div class="fb-like-box" data-href="http://www.facebook.com/'.$namePage.'" data-width="'.$w.'" data-height="'.$h.'" data-show-faces="'.$showfaces.'" data-stream="'.$stream.'" data-header="'.$header.'"></div>';
+		public function fbLikeBox($namePage='', $w='auto', $h='410', $showfaces='true', $stream='true', $header='false'){
+                    $options = get_option('eewee_options');
+                    $namePage = $options['eewee_social_facebook'];
+                    
+                    if( !empty($namePage) ){
+			return '<div class="fb-like-box" data-href="'.$namePage.'" data-width="'.$w.'" data-height="'.$h.'" data-show-faces="'.$showfaces.'" data-stream="'.$stream.'" data-header="'.$header.'"></div>';
+                    }
 		}
 		
 	}//fin class
-}//fin if
-?>
+//}//fin if

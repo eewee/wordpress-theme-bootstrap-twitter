@@ -1,4 +1,5 @@
 <?php
+//namespace FrEeweeThemeEeweeBtGravatar;
 class Gravatar{
     
     /**
@@ -27,4 +28,3 @@ class Gravatar{
     }
   
 }
-?>

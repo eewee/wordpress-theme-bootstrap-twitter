@@ -18,7 +18,7 @@ get_header(); ?>
 
                         <header class="page-header">
                                 <h1 class="page-title"><?php
-                                        printf( __( 'Tag Archives: %s', 'eewee' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+                                        printf( __( 'Tag Archives: %s', 'eewee-bt' ), '<span>' . single_tag_title( '', false ) . '</span>' );
                                 ?></h1>
 
                                 <?php
@@ -49,11 +49,11 @@ get_header(); ?>
 
                         <article id="post-0" class="post no-results not-found">
                                 <header class="entry-header">
-                                        <h1 class="entry-title"><?php _e( 'Nothing Found', 'eewee' ); ?></h1>
+                                        <h1 class="entry-title"><?php _e( 'Nothing Found', 'eewee-bt' ); ?></h1>
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content">
-                                        <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'eewee' ); ?></p>
+                                        <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'eewee-bt' ); ?></p>
                                         <?php get_search_form(); ?>
                                 </div><!-- .entry-content -->
                         </article><!-- #post-0 -->

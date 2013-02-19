@@ -7,16 +7,16 @@
 	// Define all Settings Pages Tabs
 	function eewee_get_settings_page_tabs() {
 		$tabs = array(
-			'welcome' => __('Welcome', 'eewee'),
-			'general' => __('General', 'eewee'),
-			'carousel' => __('Carousel', 'eewee'),
-		//	'colors' => __('Colors', 'eewee'),
-		//	'fonts' => __('Fonts', 'eewee'),
-		//	'about' => __('About Me', 'eewee'),
-		//	'slider' => __('Post Slider', 'eewee'),
-			'social' => __('Networks', 'eewee'),
-                        'address' => __('Address', 'eewee'),
-                        'manual' => __('Manual', 'eewee')
+			'welcome' => __('Welcome', 'eewee-bt'),
+			'general' => __('General', 'eewee-bt'),
+			'carousel' => __('Carousel', 'eewee-bt'),
+		//	'colors' => __('Colors', 'eewee-bt'),
+		//	'fonts' => __('Fonts', 'eewee-bt'),
+		//	'about' => __('About Me', 'eewee-bt'),
+		//	'slider' => __('Post Slider', 'eewee-bt'),
+			'social' => __('Networks', 'eewee-bt'),
+                        'address' => __('Address', 'eewee-bt'),
+                        'manual' => __('Manual', 'eewee-bt')
 		);
 		return $tabs;
 	}
@@ -137,7 +137,7 @@
 
                 wp_register_script('eewee_image_upload', get_template_directory_uri() .'/includes/admin/jquery-image-upload.js', array('jquery','media-upload','thickbox'));
                 wp_localize_script('eewee_image_upload', 'eewee_localizing_upload_js', array(
-                        'use_this_image' => __('Use this Image', 'eewee')
+                        'use_this_image' => __('Use this Image', 'eewee-bt')
                 ));
 
                 wp_enqueue_script('eewee_image_upload');

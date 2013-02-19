@@ -2,7 +2,7 @@
 
 add_action('admin_menu', 'eewee_admin_add_page');
 function eewee_admin_add_page() {
-	add_theme_page(__('Theme Options', 'eewee'), __('Theme Options', 'eewee'), 'edit_theme_options', 'themeeewee', 'eewee_options_page');
+	add_theme_page(__('Theme Options', 'eewee-bt'), __('Theme Options', 'eewee-bt'), 'edit_theme_options', 'themeeewee', 'eewee_options_page');
 }
 
 // Display content admin options page
@@ -23,10 +23,10 @@ function eewee_options_page() {
 
         <div id="zee_admin_heading">
         <div class="icon32" id="icon-themes"></div>
-        <h2><?php echo $theme_data->Name; ?> <?php _e('Theme Options', 'eewee'); ?></h2>
+        <h2><?php echo $theme_data->Name; ?> <?php _e('Theme Options', 'eewee-bt'); ?></h2>
         </div>
         <?php if ( isset( $_GET['settings-updated'] ) ) : ?>
-                <div class="updated"><p><?php _e('Theme settings updated successfully.', 'eewee'); ?></p></div>
+                <div class="updated"><p><?php _e('Theme settings updated successfully.', 'eewee-bt'); ?></p></div>
         <?php endif; ?>
         <div class="clear"></div>
 
@@ -53,7 +53,7 @@ function eewee_options_page() {
 
                 <input name="eewee_options[validation-submit]" type="hidden" value="<?php echo $tab ?>" />
 
-                <p><input name="Submit" class="button-primary" type="submit" value="<?php esc_attr_e('Save Changes', 'eewee'); ?>" /></p>
+                <p><input name="Submit" class="button-primary" type="submit" value="<?php esc_attr_e('Save Changes', 'eewee-bt'); ?>" /></p>
             </form>
         <?php endif; ?>
 
@@ -73,37 +73,37 @@ function eewee_options_sidebar() {
 ?>
     <div class="zee_options_sidebar">
 
-        <dl><dt><h4><?php _e('Theme Data', 'eewee'); ?></h4></dt>
+        <dl><dt><h4><?php _e('Theme Data', 'eewee-bt'); ?></h4></dt>
             <dd>
-                <p><?php _e('Name', 'eewee'); ?>: <?php echo $theme_data->Name; ?><br/>
-                <?php _e('Version', 'eewee'); ?>: <b><?php echo $theme_data->Version; ?></b>
-                <a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php _e('(Changelog)', 'eewee'); ?></a><br/>
-                <?php _e('Author', 'eewee'); ?>: <a href="http://www,eewee,fr/" target="_blank">eewee.fr</a><br/>
+                <p><?php _e('Name', 'eewee-bt'); ?>: <?php echo $theme_data->Name; ?><br/>
+                <?php _e('Version', 'eewee-bt'); ?>: <b><?php echo $theme_data->Version; ?></b>
+                <a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php _e('(Changelog)', 'eewee-bt'); ?></a><br/>
+                <?php _e('Author', 'eewee-bt'); ?>: <a href="http://www,eewee,fr/" target="_blank">eewee.fr</a><br/>
                 </p>
             </dd>
         </dl>
 
 
-        <dl><dt><h4><?php _e('About eewee', 'eewee'); ?></h4></dt>
+        <dl><dt><h4><?php _e('About eewee', 'eewee-bt'); ?></h4></dt>
             <dd>
-                <p><?php _e('eewee create <b>plugins</b> & <b>theme</b> for <b>CMS Wordpress</b>.', 'eewee'); ?></p>
-                <p><?php _e('You can download several <b>FREE WordPress Themes</b>.', 'eewee'); ?></p>
+                <p><?php _e('eewee create <b>plugins</b> & <b>theme</b> for <b>CMS Wordpress</b>.', 'eewee-bt'); ?></p>
+                <p><?php _e('You can download several <b>FREE WordPress Themes</b>.', 'eewee-bt'); ?></p>
                 <p>
-                    <a href="http://www.eewee.fr/" target="_blank"><?php _e('Visit eewee.fr now', 'eewee'); ?></a> / 
-                    <a href="<?php echo EEWEE_THEME_URL; ?>" target="_blank"><?php _e('Themes', 'eewee'); ?></a> / 
-                    <a href="<?php echo EEWEE_PLUGIN_URL; ?>" target="_blank"><?php _e('Plugins', 'eewee'); ?></a>
+                    <a href="http://www.eewee.fr/" target="_blank"><?php _e('Visit eewee.fr now', 'eewee-bt'); ?></a> / 
+                    <a href="<?php echo EEWEE_THEME_URL; ?>" target="_blank"><?php _e('Themes', 'eewee-bt'); ?></a> / 
+                    <a href="<?php echo EEWEE_PLUGIN_URL; ?>" target="_blank"><?php _e('Plugins', 'eewee-bt'); ?></a>
                 </p>
             </dd>
         </dl>
 
-        <dl><dt><h4><?php _e('Subscribe Now', 'eewee'); ?></h4></dt>
+        <dl><dt><h4><?php _e('Subscribe Now', 'eewee-bt'); ?></h4></dt>
             <dd>
-                <p><?php _e('Subscribe now and get informed about each <b>Theme Release</b> and <b>Plugin Release</b> from eewee.fr.', 'eewee'); ?></p>
+                <p><?php _e('Subscribe now and get informed about each <b>Theme Release</b> and <b>Plugin Release</b> from eewee.fr.', 'eewee-bt'); ?></p>
                 <ul class="subscribe">
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/rss.png"/><a href="http://www.eewee.fr/feed" target="_blank"><?php _e('RSS Feed', 'eewee'); ?></a></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/email.png"/><a href="http://feedburner.google.com/fb/a/mailverify?uri=eeweefr" target="_blank"><?php _e('Email Subscription', 'eewee'); ?></a></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/twitter.png"/><a href="http://www.twitter.com/eeweefr" target="_blank"><?php _e('Follow me on Twitter', 'eewee'); ?></a></li>
-                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/facebook.png"/><a href="http://www.facebook.com/eeweefr" target="_blank"><?php _e('Become a Facebok Fan', 'eewee'); ?></a></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/rss.png"/><a href="http://www.eewee.fr/feed" target="_blank"><?php _e('RSS Feed', 'eewee-bt'); ?></a></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/email.png"/><a href="http://feedburner.google.com/fb/a/mailverify?uri=eeweefr" target="_blank"><?php _e('Email Subscription', 'eewee-bt'); ?></a></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/twitter.png"/><a href="http://www.twitter.com/eeweefr" target="_blank"><?php _e('Follow me on Twitter', 'eewee-bt'); ?></a></li>
+                    <li><img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/facebook.png"/><a href="http://www.facebook.com/eeweefr" target="_blank"><?php _e('Become a Facebok Fan', 'eewee-bt'); ?></a></li>
                 </ul>
             </dd>
         </dl>
@@ -116,53 +116,53 @@ function eewee_options_welcome_screen() {
 	$theme_data = wp_get_theme();
 ?>
 	<div id="zee_welcome">
-            <h3><?php _e('Thank you for installing this theme!', 'eewee'); ?></h3>
+            <h3><?php _e('Thank you for installing this theme!', 'eewee-bt'); ?></h3>
             <div class="container">
-                    <h1><?php _e('Welcome to', 'eewee'); ?> <?php echo $theme_data->Name; ?></h1>
+                    <h1><?php _e('Welcome to', 'eewee-bt'); ?> <?php echo $theme_data->Name; ?></h1>
                     <div class="zee_intro">
-                            <?php _e("First of all, the number of options might alarm you, <b>but don't panic</b>. Everything is organized and documented well enough for you.", 'eewee'); ?>
+                            <?php _e("First of all, the number of options might alarm you, <b>but don't panic</b>. Everything is organized and documented well enough for you.", 'eewee-bt'); ?>
                     </div>
             </div>
             <div class="welcome_halfed">
                 <div class="welcome_left">
-                    <h3><?php _e('You would like some plugins free?', 'eewee'); ?></h3>
+                    <h3><?php _e('You would like some plugins free?', 'eewee-bt'); ?></h3>
                     <div class="container">
-                        <h2><?php _e('Plugin for your theme ', 'eewee'); ?> <?php echo $theme_data->Name; ?></h2>
-                        <p><?php _e('It is possible <b>eewee.fr</b>, Section wordpress / plugins.', 'eewee'); ?></p>
+                        <h2><?php _e('Plugin for your theme ', 'eewee-bt'); ?> <?php echo $theme_data->Name; ?></h2>
+                        <p><?php _e('It is possible <b>eewee.fr</b>, Section wordpress / plugins.', 'eewee-bt'); ?></p>
                         <p><h4>Pro Widgets:</h4>
                             <ul>
-                                <li>+ <?php _e('Social plugin, addthis, twitter, facebook, ...', 'eewee'); ?></li>
-                                <li>+ <?php _e('traffic to your website', 'eewee'); ?></li>
-                                <li>+ <?php _e('exchanges with your users', 'eewee'); ?></li>
-                                <li>+ <?php _e('functionality specific to your profession', 'eewee'); ?></li>
+                                <li>+ <?php _e('Social plugin, addthis, twitter, facebook, ...', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('traffic to your website', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('exchanges with your users', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('functionality specific to your profession', 'eewee-bt'); ?></li>
                             </ul>
-                            <a class="welcome_button" href="<?php echo EEWEE_PLUGIN_URL; ?>" target="_blank"><?php _e('Learn more about the eewee plugins', 'eewee'); ?></a>
+                            <a class="welcome_button" href="<?php echo EEWEE_PLUGIN_URL; ?>" target="_blank"><?php _e('Learn more about the eewee plugins', 'eewee-bt'); ?></a>
                         </p>
                     </div>
                 </div>
                 <div class="welcome_right">
-                    <h3><?php _e('You would like some themes free?', 'eewee'); ?></h3>
+                    <h3><?php _e('You would like some themes free?', 'eewee-bt'); ?></h3>
                     <div class="container">
-                        <h2><?php _e('Plugin for your theme ', 'eewee'); ?> <?php echo $theme_data->Name; ?></h2>
-                        <p><?php _e('It is possible <b>eewee.fr</b>, Section wordpress / themes.', 'eewee'); ?></p>
+                        <h2><?php _e('Plugin for your theme ', 'eewee-bt'); ?> <?php echo $theme_data->Name; ?></h2>
+                        <p><?php _e('It is possible <b>eewee.fr</b>, Section wordpress / themes.', 'eewee-bt'); ?></p>
                         <p><h4>Pro Widgets:</h4>
                             <ul>
-                                <li>+ <?php _e('usability for your users', 'eewee'); ?></li>
-                                <li>+ <?php _e('compatibility with tablets and smartphones', 'eewee'); ?></li>
-                                <li>+ <?php _e('functionality to the native theme', 'eewee'); ?></li>
-                                <li>+ <?php _e('shortcode for layout', 'eewee'); ?></li>
+                                <li>+ <?php _e('usability for your users', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('compatibility with tablets and smartphones', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('functionality to the native theme', 'eewee-bt'); ?></li>
+                                <li>+ <?php _e('shortcode for layout', 'eewee-bt'); ?></li>
                             </ul>
-                            <a class="welcome_button" href="<?php echo EEWEE_THEME_URL; ?>" target="_blank"><?php _e('Learn more about the eewee themes', 'eewee'); ?></a>
+                            <a class="welcome_button" href="<?php echo EEWEE_THEME_URL; ?>" target="_blank"><?php _e('Learn more about the eewee themes', 'eewee-bt'); ?></a>
                         </p>
                     </div>
                 </div>
                 <div class="clear"></div>
             </div>
 
-            <h3><?php _e('Not happy with', 'eewee'); ?> <?php echo $theme_data->Name; ?>?</h3>
+            <h3><?php _e('Not happy with', 'eewee-bt'); ?> <?php echo $theme_data->Name; ?>?</h3>
             <div class="container">
-            <p><?php _e('eewee.fr provide several other <b>free WordPress Themes</b>.', 'eewee'); ?>
-            <a href="http://www.eewee.fr/wordpress/themes/" target="_blank"><?php _e('Click here to browse through all of my themes.', 'eewee'); ?></a>
+            <p><?php _e('eewee.fr provide several other <b>free WordPress Themes</b>.', 'eewee-bt'); ?>
+            <a href="http://www.eewee.fr/wordpress/themes/" target="_blank"><?php _e('Click here to browse through all of my themes.', 'eewee-bt'); ?></a>
             </p>
             </div>
 	</div>
@@ -174,20 +174,20 @@ function eewee_options_manual_screen() {
 	$theme_data = wp_get_theme();
 ?>
 	<div id="zee_welcome">
-            <h3><?php _e('Shortcode : Google', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : Google', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Google maps', 'eewee'); ?></h1>
+                <h1><?php _e('Google maps', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee_map address="" city="" zip="" country="" width="" height="" zoom="" /]</strong></p>
-                <p>address : <?php _e("your address", "eewee"); ?></p>
-                <p>city : <?php _e("your city", "eewee"); ?></p>
-                <p>zip : <?php _e("your zip", "eewee"); ?></p>
-                <p>country : <?php _e("your country", "eewee"); ?></p>
-                <p>width : <?php _e("width map", "eewee"); ?></p>
-                <p>height : <?php _e("height map", "eewee"); ?></p>
-                <p>zoom : <?php _e("zoom map", "eewee"); ?></p>
+                <p>address : <?php _e("your address", "eewee-bt"); ?></p>
+                <p>city : <?php _e("your city", "eewee-bt"); ?></p>
+                <p>zip : <?php _e("your zip", "eewee-bt"); ?></p>
+                <p>country : <?php _e("your country", "eewee-bt"); ?></p>
+                <p>width : <?php _e("width map", "eewee-bt"); ?></p>
+                <p>height : <?php _e("height map", "eewee-bt"); ?></p>
+                <p>zoom : <?php _e("zoom map", "eewee-bt"); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[map address="55 av. albert einstein" zip="17000" city="la rochelle" country="france" width="800" height="400" zoom="6" /]</p>
                 
                 <p><?php echo do_shortcode( '[eewee_map address="55 av. albert einstein" zip="17000" city="la rochelle" country="france" width="800" height="400" zoom="6" /]' ); ?></p>
@@ -195,24 +195,24 @@ function eewee_options_manual_screen() {
 
             
             
-            <h3><?php _e('Shortcode : movie', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : movie', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Youtube', 'eewee'); ?></h1>
+                <h1><?php _e('Youtube', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee_movie type="youtube" code="" width="" height="" /]</strong></p>
                 
-                <h1><?php _e('Vimeo', 'eewee'); ?></h1>
+                <h1><?php _e('Vimeo', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee_movie type="vimeo" code="" width="" height="" /]</strong></p>
                 
-                <h1><?php _e('Dailymotion', 'eewee'); ?></h1>
+                <h1><?php _e('Dailymotion', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee_movie type="dailymotion" code="" width="" height="" /]</strong></p>
                 
-                <h1><?php _e('Param', 'eewee'); ?></h1>
+                <h1><?php _e('Param', 'eewee-bt'); ?></h1>
                 <p>type : youtube, vimeo, dailymotion</p>
-                <p>code : <?php _e("Code video", "eewee"); ?> (<?php _e('Example', 'eewee'); ?> youtube : zDxLl-qDy1A#!)</p>
-                <p>width : <?php _e("width movie", "eewee"); ?></p>
-                <p>height : <?php _e("height movie", "eewee"); ?></p>
+                <p>code : <?php _e("Code video", "eewee-bt"); ?> (<?php _e('Example', 'eewee-bt'); ?> youtube : zDxLl-qDy1A#!)</p>
+                <p>width : <?php _e("width movie", "eewee-bt"); ?></p>
+                <p>height : <?php _e("height movie", "eewee-bt"); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[movie type="youtube" code="zDxLl-qDy1A#!" width="800" height="400" /]</p>
                 
                 <p><?php echo do_shortcode( '[eewee_movie type="youtube" code="zDxLl-qDy1A#!" width="800" height="400"]' ); ?></p>
@@ -220,15 +220,15 @@ function eewee_options_manual_screen() {
             
             
 
-            <h3><?php _e('Shortcode : addthis', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : addthis', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('addthis', 'eewee'); ?> <?php echo $theme_data->Name; ?></h1>
+                <h1><?php _e('addthis', 'eewee-bt'); ?> <?php echo $theme_data->Name; ?></h1>
                 <p><strong>[eewee_addthis type="" code="" width="" height="" /]</strong></p>
                 <p>type : all, horiz1, horiz2, horiz3, vert1, vert2, vert3</p>
-                <p>position : <?php _e("position in your website", "eewee"); ?> here, top_post, bottom_post, header, footer</p>
-                <p>pubid : <?php _e("your pubid addthis for your statistics", "eewee"); ?></p>
+                <p>position : <?php _e("position in your website", "eewee-bt"); ?> here, top_post, bottom_post, header, footer</p>
+                <p>pubid : <?php _e("your pubid addthis for your statistics", "eewee-bt"); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee_addthis type="all" position="" /]</p>
                 <p><?php echo do_shortcode( '[eewee_addthis type="all" position="" /]' ); ?></p>
                 
@@ -256,30 +256,30 @@ function eewee_options_manual_screen() {
             
             
 
-            <h3><?php _e('Shortcode : post', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : post', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Tab news', 'eewee'); ?></h1>
+                <h1><?php _e('Tab news', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee-post type="tab" categ="" qty="" w="" /]</strong></p>
                 <p>type : tab, accordion</p>
-                <p>categ : <?php _e("id of your post categ", "eewee"); ?> (<?php _e("Example", "eewee"); ?> : 1,3,7 <?php _e("or empty", "eewee"); ?>) </p>
-                <p>qty : <?php _e("amount of product display", "eewee"); ?> (<?php _e("Default", "eewee"); ?> 3)</p>
-                <p>w : <?php _e("width of your tab", "eewee"); ?> (<?php _e("Default", "eewee"); ?> 100%)</p>
+                <p>categ : <?php _e("id of your post categ", "eewee-bt"); ?> (<?php _e("Example", "eewee-bt"); ?> : 1,3,7 <?php _e("or empty", "eewee-bt"); ?>) </p>
+                <p>qty : <?php _e("amount of product display", "eewee-bt"); ?> (<?php _e("Default", "eewee-bt"); ?> 3)</p>
+                <p>w : <?php _e("width of your tab", "eewee-bt"); ?> (<?php _e("Default", "eewee-bt"); ?> 100%)</p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-post type="tab" /]</p>
                 <p><?php //echo do_shortcode( '[eewee-post type="tab" /]' ); ?></p>
 
 
                
-                <h1><?php _e('Accordeon news', 'eewee'); ?></h1>
+                <h1><?php _e('Accordeon news', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee-post type="accordion" categ="" qty="" w="" /]</strong></p>
                 <p>type : tab, accordion</p>
-                <p>categ : <?php _e("id of your post categ", "eewee"); ?> (<?php _e("Example", "eewee"); ?> : 1,3,7 <?php _e("or empty", "eewee"); ?>) </p>
-                <p>qty : <?php _e("amount of product display", "eewee"); ?> (<?php _e("Default", "eewee"); ?> 3)</p>
-                <p>w : <?php _e("width of your tab", "eewee"); ?> (<?php _e("Default", "eewee"); ?> 100%)</p>
-                <p>open : <?php _e("1st accordion open", "eewee"); ?> (<?php _e("Example", "eewee"); ?> y, n)</p>
+                <p>categ : <?php _e("id of your post categ", "eewee-bt"); ?> (<?php _e("Example", "eewee-bt"); ?> : 1,3,7 <?php _e("or empty", "eewee-bt"); ?>) </p>
+                <p>qty : <?php _e("amount of product display", "eewee-bt"); ?> (<?php _e("Default", "eewee-bt"); ?> 3)</p>
+                <p>w : <?php _e("width of your tab", "eewee-bt"); ?> (<?php _e("Default", "eewee-bt"); ?> 100%)</p>
+                <p>open : <?php _e("1st accordion open", "eewee-bt"); ?> (<?php _e("Example", "eewee-bt"); ?> y, n)</p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-post type="accordion" /]</p>
                 <p><?php //echo do_shortcode( '[eewee-post type="tab" /]' ); ?></p>
                
@@ -287,111 +287,111 @@ function eewee_options_manual_screen() {
             
             
 
-            <h3><?php _e('Shortcode : alert', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : alert', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Alert message', 'eewee'); ?></h1>
+                <h1><?php _e('Alert message', 'eewee-bt'); ?></h1>
                 <p><strong>[eewee-alert type='' title='' mess='' /]</strong></p>
                 <p>type : block, error, success, info</p>
-                <p>title : <?php _e('title of your message', 'eewee'); ?></p>
-                <p>mess : <?php _e('content of your message', 'eewee'); ?></p>
+                <p>title : <?php _e('title of your message', 'eewee-bt'); ?></p>
+                <p>mess : <?php _e('content of your message', 'eewee-bt'); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-alert type="success" title="eBook : wordpress" mess="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tristique, nibh facilisis rhoncus venenatis, velit libero tempor justo, vitae vehicula lectus massa ac ligula. Nam euismod lacinia neque, at fringilla nisl lobortis vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit." /]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : button', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : button', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Button', 'eewee'); ?></h1>
+                <h1><?php _e('Button', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-btn type='' title='' mess='' /]</strong></p>
-                <p>type : <?php _e('button type', 'eewee'); ?> (primary, info, success, warning, danger, inverse, link)</p>
-                <p>size : <?php _e('button size', 'eewee'); ?> (large, small, mini) </p>
-                <p>block : <?php _e('full width of a parent', 'eewee'); ?></p>
-                <p>mess : <?php _e('content of your message', 'eewee'); ?></p>
+                <p>type : <?php _e('button type', 'eewee-bt'); ?> (primary, info, success, warning, danger, inverse, link)</p>
+                <p>size : <?php _e('button size', 'eewee-bt'); ?> (large, small, mini) </p>
+                <p>block : <?php _e('full width of a parent', 'eewee-bt'); ?></p>
+                <p>mess : <?php _e('content of your message', 'eewee-bt'); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
-                <p>[eewee-btn size="large" type="success" mess="<?php _e("Product A", "eewee"); ?>" /]</p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
+                <p>[eewee-btn size="large" type="success" mess="<?php _e("Product A", "eewee-bt"); ?>" /]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : image', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : image', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('shape of the image', 'eewee'); ?></h1>
+                <h1><?php _e('shape of the image', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-img type='' url='' /]</strong></p>
-                <p>type : <?php _e('type of effect', 'eewee'); ?> (rounded, circle, polaroid)</p>
-                <p>url : <?php _e('url of the image', 'eewee'); ?></p>
+                <p>type : <?php _e('type of effect', 'eewee-bt'); ?> (rounded, circle, polaroid)</p>
+                <p>url : <?php _e('url of the image', 'eewee-bt'); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-img type="circle" url="http://www.myWebsite.com/img/a.jpg" /]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : color', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : color', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Texte color', 'eewee'); ?></h1>
+                <h1><?php _e('Texte color', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-color type='' mess='' /]</strong></p>
-                <p>type : <?php _e('color of your text', 'eewee'); ?> (muted, warning, error, info, success)</p>
-                <p>mess : <?php _e('content of your message', 'eewee'); ?></p>
+                <p>type : <?php _e('color of your text', 'eewee-bt'); ?> (muted, warning, error, info, success)</p>
+                <p>mess : <?php _e('content of your message', 'eewee-bt'); ?></p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-color type="info" mess="Lorem ipsum dolor sit amet, consectetur adipiscing elit." /]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : blockquote', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : blockquote', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Blockquote message', 'eewee'); ?></h1>
+                <h1><?php _e('Blockquote message', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-bg mess='' mess2='' cite='' /]</strong></p>
-                <p>mess : <?php _e('content of your message', 'eewee'); ?></p>
-                <p>mess2 : <?php _e('content of your small message', 'eewee'); ?></p>
-                <p>cite : <?php _e('citation', 'eewee'); ?></p>
-                <p>position : <?php _e('position', 'eewee'); ?> (left, right)</p>
+                <p>mess : <?php _e('content of your message', 'eewee-bt'); ?></p>
+                <p>mess2 : <?php _e('content of your small message', 'eewee-bt'); ?></p>
+                <p>cite : <?php _e('citation', 'eewee-bt'); ?></p>
+                <p>position : <?php _e('position', 'eewee-bt'); ?> (left, right)</p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-bq mess="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante." mess2="Someone famous in" cite="Source Title" /]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : description', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : description', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Description message', 'eewee'); ?></h1>
+                <h1><?php _e('Description message', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-dl position=""][eewee-dt mess="" /][eewee-dd mess="" /]...[/eewee-dl]</strong></p>
-                <p>mess : <?php _e('content of your message', 'eewee'); ?></p>
-                <p>position : <?php _e('content position', 'eewee'); ?> (horizontal)</p>
+                <p>mess : <?php _e('content of your message', 'eewee-bt'); ?></p>
+                <p>position : <?php _e('content position', 'eewee-bt'); ?> (horizontal)</p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-dl][eewee-dt mess="aaa" /][eewee-dd mess="bbb" /][eewee-dt mess="ccc" /][eewee-dd mess="ddd" /][eewee-dt mess="eee" /][eewee-dd mess="fff" /][/eewee-dl]</p>
                 <p>[eewee-dl position="horizontal"][eewee-dt mess="aaa" /][eewee-dd mess="bbb" /][eewee-dt mess="ccc" /][eewee-dd mess="ddd" /][eewee-dt mess="eee" /][eewee-dd mess="fff" /][/eewee-dl]</p>
             </div>
             
             
 
-            <h3><?php _e('Shortcode : colonne', 'eewee'); ?></h3>
+            <h3><?php _e('Shortcode : colonne', 'eewee-bt'); ?></h3>
             <div class="container">
-                <h1><?php _e('Create colonne', 'eewee'); ?></h1>
+                <h1><?php _e('Create colonne', 'eewee-bt'); ?></h1>
                 
                 <p><strong>[eewee-col][eewee-col]</strong></p>
-                <p>f : <?php _e('content of your message', 'eewee'); ?></p>
-                <p>t1 : <?php _e('size colonne', 'eewee'); ?> (1-12)</p>
-                <p>t2 : <?php _e('size colonne', 'eewee'); ?> (1-12)</p>
-                <p>t3 : <?php _e('size colonne', 'eewee'); ?> (1-12)</p>
-                <p>t4 : <?php _e('size colonne', 'eewee'); ?> (1-12)</p>
-                <p>m1 : <?php _e('message', 'eewee'); ?> (1-12)</p>
-                <p>m2 : <?php _e('message', 'eewee'); ?> (1-12)</p>
-                <p>m3 : <?php _e('message', 'eewee'); ?> (1-12)</p>
-                <p>m4 : <?php _e('message', 'eewee'); ?> (1-12)</p>
+                <p>f : <?php _e('content of your message', 'eewee-bt'); ?></p>
+                <p>t1 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
+                <p>t2 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
+                <p>t3 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
+                <p>t4 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
+                <p>m1 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
+                <p>m2 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
+                <p>m3 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
+                <p>m4 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
                 
-                <p><strong><?php _e("Example", "eewee"); ?> : </strong></p>
+                <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
                 <p>[eewee-col]</p>
             </div>
 
@@ -503,7 +503,7 @@ function eewee_display_setting( $setting = array() ) {
             case 'image':
                 echo "<p class='zee-image-bg'><img id='".$setting['id']."img' src='" . esc_attr($options[$setting['id']]) . "' /></p>";
                 echo '<input class="zee-upload-image-field" id="'.$setting['id'].'" name="eewee_options['.$setting['id'].']" type="text" value="'. esc_attr($options[$setting['id']]) .'" />';
-                echo '<input class="zee-upload-image-button button-secondary" type="button" value="'. __("Upload Image", "eewee") .'" />';
+                echo '<input class="zee-upload-image-button button-secondary" type="button" value="'. __("Upload Image", "eewee-bt") .'" />';
                 echo '	<label>'.$setting['desc'].'</label>';
 
                 break;

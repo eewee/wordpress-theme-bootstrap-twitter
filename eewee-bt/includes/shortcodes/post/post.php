@@ -104,7 +104,7 @@
 											<div class='span2'>";
 										
 												$onglet .= "										
-												<a href='".get_permalink($actu->ID)."'>".__("Read more", "eewee")."...</a><br />
+												<a href='".get_permalink($actu->ID)."'>".__("Read more", "eewee-bt")."...</a><br />
 												<br />
 												";
 

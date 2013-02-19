@@ -1,5 +1,6 @@
 <?php 
-if( !class_exists(ShortcodeController)){
+//namespace FrEeweeThemeEeweeBtShortcodeController;
+//if( !class_exists(ShortcodeController)){
 	class ShortcodeController{
 		
 		public function __construct(){
@@ -340,14 +341,14 @@ if( !class_exists(ShortcodeController)){
 								<a class='addthis_button_compact'></a>
 								<a class='addthis_counter addthis_bubble_style'></a>
 								</div>
-								<script type='text/javascript' src='http://s7.addthis.com/js/300/addthis_widget.js#pubid=".$idAddthis."'></script>
+								<script type='text/javascript' src='http://s7.addthis.com/js/300/addthis_widget.js'></script>
 								<br />";
 								
 								$d .= "
 								<h3>".$actu->post_title."</h3>
 								".$tools->getContentLimit($actu->post_content, 300)."
 								<br />
-								<a href='".get_permalink($actu->ID)."' class='btn btn-mini btn-info'>".__("Read more", "eewee")."...</a><br />
+								<a href='".get_permalink($actu->ID)."' class='btn btn-mini btn-info'>".__("Read more", "eewee-bt")."...</a><br />
 								<br />";
 								
 							$d .= " 
@@ -414,7 +415,7 @@ if( !class_exists(ShortcodeController)){
 		*/
 		public function eewee_shortcode_post_accordion( $tbl ){
 			extract($tbl);
-			
+			$d = "";
 			$tools = new ToolsController();
 				
 			// init categ
@@ -499,14 +500,14 @@ if( !class_exists(ShortcodeController)){
 										<a class='addthis_button_compact'></a>
 										<a class='addthis_counter addthis_bubble_style'></a>
 										</div>
-										<script type='text/javascript' src='http://s7.addthis.com/js/300/addthis_widget.js#pubid=".$idAddthis."'></script>
+										<script type='text/javascript' src='http://s7.addthis.com/js/300/addthis_widget.js'></script>
 										<br />";
 										
 										$d .= "
 										<h3>".$actu->post_title."</h3>
 										".$tools->getContentLimit($actu->post_content, 300)."
 										<br />
-										<a href='".get_permalink($actu->ID)."' class='btn btn-mini btn-info'>".__("Read more", "eewee")."...</a><br />
+										<a href='".get_permalink($actu->ID)."' class='btn btn-mini btn-info'>".__("Read more", "eewee-bt")."...</a><br />
 										<br />
                                                                                 <div class='clearfix'></div>";
                                                                     
@@ -632,5 +633,4 @@ if( !class_exists(ShortcodeController)){
                }
 	
 	}//fin class
-}//fin if
-?>
+//}//fin if

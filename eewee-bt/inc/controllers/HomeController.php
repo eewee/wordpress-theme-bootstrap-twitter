@@ -1,5 +1,6 @@
 <?php 
-if( !class_exists(HomeController)){
+//namespace FrEeweeThemeEeweeBtHomeController;
+//if( !class_exists(HomeController)){
 	class HomeController{
 		
 		public function __construct(){}
@@ -104,5 +105,4 @@ if( !class_exists(HomeController)){
 		
 		
 	}//fin class
-}//fin if
-?>
+//}//fin if

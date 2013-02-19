@@ -17,14 +17,14 @@ if ( ! function_exists( 'eewee_setup' ) ):
 function eewee_setup() {
     
     if ( ! isset( $content_width ) )
-	$content_width = 1000;
+	$content_width = 940;
 
     // GENERAL
         // Make Eewee Boostrap Twitter available for translation.
 	// Translations can be added to the /languages/ directory.
-	load_theme_textdomain( 'eewee', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'eewee-bt', get_template_directory() . '/languages' );
 
-	// This theme styles the visual editor with editor-style.css to match the theme style.
+        // This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
 	// add css
@@ -54,8 +54,8 @@ function eewee_setup() {
     // MENU : wp_nav_menus()
 	register_nav_menus( 
             array(
-                'top_menu' => __( 'Top Menu', 'eewee' ),
-                'footer_menu' => __( 'Footer Menu', 'eewee' )
+                'top_menu' => __( 'Top Menu', 'eewee-bt' ),
+                'footer_menu' => __( 'Footer Menu', 'eewee-bt' )
             )
         );
         
@@ -112,7 +112,6 @@ function eewee_setup() {
 }
 endif; // eewee_setup
 
-
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
@@ -139,7 +138,7 @@ function eewee_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'eewee' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'eewee-bt' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -206,12 +205,12 @@ function eewee_content_nav( $nav_id ) {
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo $nav_id; ?> nav-single">
                     <ul class="pager">
-			<!--<h3 class="assistive-text"><?php //_e( 'Post navigation', 'eewee' ); ?></h3>-->
+			<!--<h3 class="assistive-text"><?php //_e( 'Post navigation', 'eewee-bt' ); ?></h3>-->
 			<li class="previous">
-                            <?php next_posts_link( __( '&larr; Older posts', 'eewee' ) ); ?>
+                            <?php next_posts_link( __( '&larr; Older posts', 'eewee-bt' ) ); ?>
                         </li>
                         <li class="next">
-                            <?php previous_posts_link( __( 'Newer posts &rarr;', 'eewee' ) ); ?>
+                            <?php previous_posts_link( __( 'Newer posts &rarr;', 'eewee-bt' ) ); ?>
                         </li>
                     </ul>
 		</nav><!-- #nav-above -->
@@ -230,7 +229,7 @@ function eewee_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'eewee' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'eewee' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'eewee-bt' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'eewee-bt' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -247,22 +246,22 @@ function eewee_comment( $comment, $args, $depth ) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'eewee' ),
+						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'eewee-bt' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'eewee' ), get_comment_date(), get_comment_time() )
+								sprintf( __( '%1$s at %2$s', 'eewee-bt' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit', 'eewee' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'eewee-bt' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'eewee' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'eewee-bt' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -271,7 +270,7 @@ function eewee_comment( $comment, $args, $depth ) {
 			<div class="comment-content"><?php comment_text(); ?></div>
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'eewee' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'eewee-bt' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 
@@ -292,7 +291,7 @@ function eewee_excerpt_length( $length ) { return 50; }
 add_filter( 'excerpt_length', 'eewee_excerpt_length' );
 
 function eewee_read_more_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Read more', 'eewee' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Read more', 'eewee-bt' ) . '</a>';
 }
 
 
@@ -335,7 +334,7 @@ function eewee_widgets_init() {
 	//register_widget( 'Eewee_Bootstrap_Twitter_Widget' );
 
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'eewee' ),
+		'name' => __( 'Main Sidebar', 'eewee-bt' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -345,9 +344,9 @@ function eewee_widgets_init() {
         
         /*
 	register_sidebar( array(
-		'name' => __( 'Showcase Sidebar', 'eewee' ),
+		'name' => __( 'Showcase Sidebar', 'eewee-bt' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'The sidebar for the optional Showcase Template', 'eewee' ),
+		'description' => __( 'The sidebar for the optional Showcase Template', 'eewee-bt' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -365,7 +364,7 @@ add_action( 'widgets_init', 'eewee_widgets_init' );
 // POST
 function new_excerpt_more($more) {
     global $post;
-    return '<p><a href="'. get_permalink($post->ID) . '" class="btn btn-primary">'.__("read more", "eewee").'</a></p>';
+    return '<p><a href="'. get_permalink($post->ID) . '" class="btn btn-primary">'.__("read more", "eewee-bt").'</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -376,7 +375,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 add_action('init', 'eewee_porfolio');
 function eewee_porfolio(){
     register_post_type('portfolio', array(
-            'label' => __('Portfolio', 'eewee'),
+            'label' => __('Portfolio', 'eewee-bt'),
             'public' => true,
             'show_ui' => true,
             'menu_position' => 6,

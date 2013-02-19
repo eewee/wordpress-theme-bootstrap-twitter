@@ -1,5 +1,6 @@
 <?php
-if( !class_exists(ToolsController)){
+//namespace FrEeweeThemeEeweeBtToolsController;
+//if( !class_exists(ToolsController)){
 	class ToolsController{
 		
 		//const XXX_XXX = 55;
@@ -79,6 +80,7 @@ if( !class_exists(ToolsController)){
                 /**
 		 * Savoir si on est dans une rubrique de la categ xxx
 		 */
+                /*
 		function isCategXxx(){
 			if( eregi("/xxx/", $_SERVER['REQUEST_URI']) ){
 				return true;
@@ -86,6 +88,7 @@ if( !class_exists(ToolsController)){
 				return false;
 			}
 		}
+                */
 		
 		/**
 		 * 
@@ -163,4 +166,4 @@ if( !class_exists(ToolsController)){
 		
 	}//fin class
 	
-}//fin if
+//}//fin if

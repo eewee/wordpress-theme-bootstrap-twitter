@@ -1,5 +1,6 @@
 <?php 
-if( !class_exists(FooterController)){
+//namespace FrEeweeThemeEeweeBtFooterController;
+//if( !class_exists(FooterController)){
 	class FooterController{
 		
 		public function __construct(){
@@ -51,14 +52,14 @@ if( !class_exists(FooterController)){
                             <?php // twitter ?>
                             <div class="span4">
 
-                                <?php echo $rs->twWidgetProfil("michaeldumontet"); ?>
+                                <?php echo $rs->twWidgetProfil(); ?>
 
                             </div><!-- span -->
 
                             <?php // facebook ?>
                             <div class="span4">
 
-                                <?php $rs->fbSdkJs(); echo $rs->fbLikeBox("eeweefr"); ?>
+                                <?php $rs->fbSdkJs(); echo $rs->fbLikeBox(); ?>
 
                             </div><!-- span -->
                         </div><!-- row-fluid -->
@@ -92,7 +93,7 @@ if( !class_exists(FooterController)){
                                 ?>
                             </div>
                             <div class="span4 about-company">
-                                <h3><?php _e("A propos", "eewee"); ?></h3>
+                                <h3><?php _e("A propos", "eewee-bt"); ?></h3>
                                 <?php $options = get_option('eewee_options'); ?>
                                 <span itemprop="description" itemscope itemtype="http://data-vocabulary.org/Thing">
                                     <div class='pull-left'><img src='<?php echo esc_attr($options['eewee_general_logo']); ?>' width='100px' /></div>
@@ -136,19 +137,19 @@ if( !class_exists(FooterController)){
 
                                 <i class=" icon-headphones"></i>
                                 <?php if( !empty($options['eewee_address_phone1']) ){ ?>
-                                    <abbr title="Phone"><?php _e("Ph.", "eewee"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone1']); ?></span>
+                                    <abbr title="Phone"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone1']); ?></span>
                                 <?php } ?>
                                 <?php if( !empty($options['eewee_address_phone2']) ){ ?>
-                                    <abbr title="Phone"><?php _e("Ph.", "eewee"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone2']); ?></span>
+                                    <abbr title="Phone"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone2']); ?></span>
                                 <?php } ?>
                                 <?php if( !empty($options['eewee_address_phone3']) ){ ?>
-                                    <abbr title="Phone"><?php _e("Ph.", "eewee"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone3']); ?></span>
+                                    <abbr title="Phone"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone3']); ?></span>
                                 <?php } ?>
                                 <?php if( !empty($options['eewee_address_mobile']) ){ ?>
-                                    <abbr title="Mobile"><?php _e("Ph.", "eewee"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_mobile']); ?></span>
+                                    <abbr title="Mobile"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_mobile']); ?></span>
                                 <?php } ?>
                                 <?php if( !empty($options['eewee_address_zip']) ){ ?>    
-                                    <abbr title="Fax"><?php _e("Fax", "eewee"); ?></abbr> <span itemprop="faxNumber"><?php echo esc_attr($options['eewee_address_fax']); ?></span>
+                                    <abbr title="Fax"><?php _e("Fax", "eewee-bt"); ?></abbr> <span itemprop="faxNumber"><?php echo esc_attr($options['eewee_address_fax']); ?></span>
                                 <?php } ?>
                                 <?php if( !empty($options['eewee_address_zip']) ){ ?>    
 
@@ -190,5 +191,4 @@ if( !class_exists(FooterController)){
 		}
 		
 	}//fin class
-}//fin if
-?>
+//}//fin if

@@ -17,10 +17,10 @@ get_header(); ?>
                             <nav id="nav-single">
                                 <ul class="pager">
                                     <li class="previous">
-                                        <?php previous_post_link( '%link', __( '&larr; Previous', 'eewee' ) ); ?>
+                                        <?php previous_post_link( '%link', __( '&larr; Previous', 'eewee-bt' ) ); ?>
                                     </li>
                                     <li class="next">
-                                        <?php next_post_link( '%link', __( 'Next &rarr;', 'eewee' ) ); ?>
+                                        <?php next_post_link( '%link', __( 'Next &rarr;', 'eewee-bt' ) ); ?>
                                     </li>
                                 </ul>
                             </nav><!-- #nav-single -->

@@ -19,13 +19,13 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title">
 						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Daily Archives: %s', 'eewee' ), '<span>' . get_the_date() . '</span>' ); ?>
+							<?php printf( __( 'Daily Archives: %s', 'eewee-bt' ), '<span>' . get_the_date() . '</span>' ); ?>
 						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Monthly Archives: %s', 'eewee' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'eewee' ) ) . '</span>' ); ?>
+							<?php printf( __( 'Monthly Archives: %s', 'eewee-bt' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'eewee-bt' ) ) . '</span>' ); ?>
 						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Yearly Archives: %s', 'eewee' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'eewee' ) ) . '</span>' ); ?>
+							<?php printf( __( 'Yearly Archives: %s', 'eewee-bt' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'eewee-bt' ) ) . '</span>' ); ?>
 						<?php else : ?>
-							<?php _e( 'Blog Archives', 'eewee' ); ?>
+							<?php _e( 'Blog Archives', 'eewee-bt' ); ?>
 						<?php endif; ?>
 					</h1>
 				</header>
@@ -51,11 +51,11 @@ get_header(); ?>
 
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'eewee' ); ?></h1>
+						<h1 class="entry-title"><?php _e( 'Nothing Found', 'eewee-bt' ); ?></h1>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'eewee' ); ?></p>
+						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'eewee-bt' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->

@@ -15,12 +15,12 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-                <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'eewee' ) . '</span>', 'after' => '</div>' ) ); ?>
+                <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'eewee-bt' ) . '</span>', 'after' => '</div>' ) ); ?>
                 <?php the_tags(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php edit_post_link( __( 'Edit', 'eewee' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'eewee-bt' ), '<span class="edit-link">', '</span>' ); ?>
 
 		
 		
@@ -35,7 +35,7 @@
                 $gravatar = new Gravatar();
                 $url = $gravatar->get_gravatar( $user->user_email ); ?>
                 <section class="vcard about-author clearfix" item="vcard">
-                    <span itemprop="fn"><?php echo __("About author", "eewee")." : ".$user->display_name; ?></span>
+                    <span itemprop="fn"><?php echo __("About author", "eewee-bt")." : ".$user->display_name; ?></span>
 
                     <?php if( !empty($user->user_url) ){ ?>
                         <a itemprop="internet" href='<?php echo $user->user_url; ?>'><img src="<?php echo get_template_directory_uri(); ?>/images/icons/social-network/wordpress.png" /></a> 

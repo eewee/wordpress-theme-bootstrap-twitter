@@ -1,5 +1,6 @@
 <?php 
-if( !class_exists(TPost)){
+//namespace FrEeweeThemeEeweeBtTPost
+//if( !class_exists(TPost)){
 	class TPost{
 		
 		public function __construct(){}
@@ -50,4 +51,4 @@ if( !class_exists(TPost)){
 		}
 		
 	}//fin class
-}//fin if
+//}//fin if
