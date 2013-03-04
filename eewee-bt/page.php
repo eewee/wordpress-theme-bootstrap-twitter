@@ -7,7 +7,6 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

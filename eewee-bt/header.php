@@ -4,7 +4,6 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

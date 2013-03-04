@@ -2,7 +2,6 @@
 /**
  * The template for displaying content in the single.php template
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

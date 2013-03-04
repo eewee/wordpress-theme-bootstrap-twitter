@@ -2,7 +2,6 @@
 /**
  * The template for displaying Author Archive pages.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

@@ -2,7 +2,6 @@
 /**
  * The Sidebar containing the main widget area.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

@@ -7,7 +7,6 @@
  * handled by a callback to eewee_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
  * @subpackage Twenty_Eleven
  * @since Twenty Eleven 1.0
  */

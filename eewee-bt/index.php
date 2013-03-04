@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
+ * @since Eewee Bootstrap Twitter 0.1
  */
 
 get_header(); ?>

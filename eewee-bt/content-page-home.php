@@ -2,7 +2,6 @@
 /**
  * The template used for displaying page content in page-home.php
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

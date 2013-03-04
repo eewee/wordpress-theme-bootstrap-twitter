@@ -571,7 +571,7 @@ add_filter('wp_nav_menu_args', 'bootstrap_nav_menu_args');
 
 
 
-/* DEBUT : OPTION THEME */
+/* DEBUT : OPTION THEME - ADMIN */
 
 // include Admin Files
 locate_template('/includes/admin/theme-functions.php', true);

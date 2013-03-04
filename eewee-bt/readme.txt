@@ -15,6 +15,10 @@
 * Theme options / network : This information appears in the block "about the author" in the foot of an article.
 * Theme options / address : This information appears in the footer.
 
+== COPYRIGHT ==
+* This theme was inspired by the zeeThemes for the administrative part of the site
+* This theme was inspired by the Twitter Bootstrap for formatting the front office
+
 == ABOUT EEWEE ==
 
 * Development themes and plugins for wordpress.

@@ -3,7 +3,6 @@
  * Template Name: Sidebar Template
  * Description: A Page Template that adds a sidebar to pages
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

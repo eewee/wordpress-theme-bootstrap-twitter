@@ -6,7 +6,6 @@
  * The full width page, display the page on full width.
  * it's use for corporate website for sample.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

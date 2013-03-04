@@ -3,6 +3,11 @@
 
 == VERSION ==
 
+= 0.4.9 =
+* Correction license
+* Remove @package Wordpress
+* Add copyright in readme.txt
+
 = 0.4.8 =
 * Fixed notices
 * Default value facebook, twitter

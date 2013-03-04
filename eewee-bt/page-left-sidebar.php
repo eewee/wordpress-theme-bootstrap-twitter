@@ -5,7 +5,6 @@
  *
  * The page with a sidebar left.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */

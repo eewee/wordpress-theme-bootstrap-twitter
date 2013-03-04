@@ -5,7 +5,6 @@
  *
  * The home page, display a slide and news.
  *
- * @package WordPress
  * @subpackage Eewee_Bootstrap_Twitter
  * @since Eewee Bootstrap Twitter 0.1
  */
