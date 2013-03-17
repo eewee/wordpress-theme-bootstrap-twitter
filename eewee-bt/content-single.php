@@ -53,7 +53,7 @@
                     <?php } ?>
 
                     <?php if( !empty($user->user_googleplus) ){ ?>
-                        <a itemprop="internet" rel='author' href='<?php echo $user->user_googleplus; ?>'><img src="<?php echo get_template_directory_uri(); ?>/images/icons/social-network/googeplus.png" /></a> 
+                        <a itemprop="internet" rel='author' href='<?php echo $user->user_googleplus; ?>'><img src="<?php echo get_template_directory_uri(); ?>/images/icons/social-network/googleplus.png" /></a> 
                     <?php } ?>
 
                     <?php if( !empty($user->user_linkedin) ){ ?>

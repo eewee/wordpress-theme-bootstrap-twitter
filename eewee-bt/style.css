@@ -4,7 +4,7 @@ Theme URI: http://www.eewee.fr/developpement-cms/wordpress/themes/
 Author: eewee, Michael DUMONTET
 Author URI: http://www.eewee.fr/
 Description: The theme for WordPress developped by eewee.fr. He use the framework css "bootstrap twitter". Responsive design template. it will fit properly on tablets, smartphones, etc. ... Easy to use you can configure wordpress in the administration of various tools such as social networks, contact companies, ... Also use a system of distribution of your news via a shortcode (tab, accordion). Features quick and simple to use.
-Version: 0.4.9
+Version: 0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, one-column, left-sidebar, right-sidebar, theme-options, editor-style
@@ -20,6 +20,8 @@ Text Domain: eewee-bt
  *  - FONT
  *  - LIST
  *  - BLOC
+ *  - DIVERS
+ *  - RESEAUX SOCIAUX
  *  - TEMP
  */
  
@@ -47,8 +49,6 @@ Text Domain: eewee-bt
     margin: auto;
 }
 
-/* =LINK
---------------------------------------*/
 .menu-footer-container ul.menu a{
     font-weight: bold;
 }
@@ -117,6 +117,21 @@ Text Domain: eewee-bt
     
     padding: 10px;
 }
+.footer-article{
+    border: 1px solid #000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* =RESEAUX SOCIAUX
+--------------------------------------*/
+#fb-root { display: none; }
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] { width: 100% !important; }
+
+/* =CARROUSEL
+--------------------------------------*/
+.carousel h1{ color: #fff; }
 
 /* =DIVERS
 --------------------------------------*/

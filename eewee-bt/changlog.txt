@@ -3,6 +3,12 @@
 
 == VERSION ==
 
+= 0.5 =
+* Fixed footer information (social network, fax, ...)
+* Fixed BO : url logo
+* Fixed carousel enabled / disabled
+* Fixed url image
+
 = 0.4.9 =
 * Correction license
 * Remove @package Wordpress

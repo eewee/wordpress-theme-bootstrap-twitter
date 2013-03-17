@@ -63,6 +63,13 @@
                                                     "std" => "",
                                                     "type" => "textarea",
                                                     "section" => "eewee_carousel_layout");
+                    
+                    $eewee_settings[] = array("name" => __("Url", "eewee-bt")." ".$i,
+                                                    "desc" => __('Link', 'eewee-bt'),
+                                                    "id" => "eewee_carousel_url_".$i,
+                                                    "std" => "",
+                                                    "type" => "text",
+                                                    "section" => "eewee_carousel_layout");
                 }
                 return $eewee_settings;
 	}

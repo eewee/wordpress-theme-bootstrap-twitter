@@ -15,7 +15,7 @@ function eewee_options_page() {
         <div id="zee_admin_head">
                 <div id="zee_options_logo">
                         <a href="http://themeeewee.com/" target="_blank">
-                                <img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/eewee_logo.png" alt="Logo" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/includes/admin/images/eewee-logo.png" alt="Logo" />
                         </a>
                 </div>
         </div>

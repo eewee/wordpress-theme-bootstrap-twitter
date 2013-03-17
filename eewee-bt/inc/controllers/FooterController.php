@@ -15,7 +15,7 @@
                     <div id="page" class="hfeed <?php echo ToolsController::getPageSize(); ?>">
                         
                         <div class="row-fluid"><?php
-                            ?><div class="span4"><?php
+                            ?><div class="span4 footer-article"><?php
 
                                 // get posts
                                 $args = array(
@@ -119,7 +119,14 @@
                             <div itemscope itemtype="http://data-vocabulary.org/Organization"> 
                                 <span itemprop="name"><a href="<?php echo home_url(); ?>" itemprop="url"><strong><?php echo esc_attr($options['eewee_address_company']); ?></strong></a></span>
 
-                                <i class="icon-map-marker"></i>
+                                <?php if(
+                                    !empty($options['eewee_address_address1']) ||
+                                    !empty($options['eewee_address_address2']) ||
+                                    !empty($options['eewee_address_zip']) ||
+                                    !empty($options['eewee_address_city'])
+                                ){ ?>
+                                    <i class="icon-map-marker"></i>
+                                <?php } ?>    
                                 <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                                     <?php if( !empty($options['eewee_address_address1']) ){ ?>
                                         <span itemprop="street-address"><?php echo esc_attr($options['eewee_address_address1']); ?></span>, 
@@ -135,7 +142,16 @@
                                     <?php } ?>
                                 </span>
 
-                                <i class=" icon-headphones"></i>
+                                
+                                <?php if(
+                                        !empty($options['eewee_address_phone1']) ||
+                                        !empty($options['eewee_address_phone2']) ||
+                                        !empty($options['eewee_address_phone3']) ||
+                                        !empty($options['eewee_address_mobile']) ||
+                                        !empty($options['eewee_address_fax'])
+                                ){ ?>
+                                    <i class=" icon-headphones"></i>
+                                <?php } ?>
                                 <?php if( !empty($options['eewee_address_phone1']) ){ ?>
                                     <abbr title="Phone"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_phone1']); ?></span>
                                 <?php } ?>
@@ -148,15 +164,8 @@
                                 <?php if( !empty($options['eewee_address_mobile']) ){ ?>
                                     <abbr title="Mobile"><?php _e("Ph.", "eewee-bt"); ?></abbr> <span itemprop="telephone"><?php echo esc_attr($options['eewee_address_mobile']); ?></span>
                                 <?php } ?>
-                                <?php if( !empty($options['eewee_address_zip']) ){ ?>    
+                                <?php if( !empty($options['eewee_address_fax']) ){ ?>    
                                     <abbr title="Fax"><?php _e("Fax", "eewee-bt"); ?></abbr> <span itemprop="faxNumber"><?php echo esc_attr($options['eewee_address_fax']); ?></span>
-                                <?php } ?>
-                                <?php if( !empty($options['eewee_address_zip']) ){ ?>    
-
-                                <?php } ?>
-                                <?php if( !empty($options['eewee_address_zip']) ){ ?>    
-
-
                                 <?php } ?>
                                 <br />
 

@@ -575,7 +575,7 @@
                     
                     $options = get_option('eewee_options');
                     //echo "enabled : ".$options['eewee_carousel_enabled']."<hr />";
-                    if( $options['eewee_carousel_enabled'] ){
+                    if( $options['eewee_carousel_enabled'] == "true" ){
                         if( $options['eewee_carousel_qty'] > 0 ){
                             $qty = $options['eewee_carousel_qty'];
                         }else{
@@ -583,7 +583,22 @@
                         }
                         
                         $a = '
-                        <div id="myCarousel" class="carousel slide">
+                        <div id="myCarousel" class="carousel slide">';
+                            /*
+                            <ol class="carousel-indicators">';
+                        
+                                for( $i=1 ; $i<=$qty ; $i++ ){
+                                    if( $i==1 ){
+                                        $active = 'active';
+                                    }else{
+                                        $active = '';
+                                    }
+                                    $a .= '<li data-target="#myCarousel" data-slide-to="'.$i.'" class="'.$active.'"></li>';
+                                }
+                            $a .= '</ol>';
+                            */
+                        
+                            $a .= '
                             <!-- Carousel items -->
                             <div class="carousel-inner">';
 
@@ -605,8 +620,19 @@
                                         ){
                                             $a .= '
                                             <div class="carousel-caption">
-                                                <h4>'.$options['eewee_carousel_title_'.$i].'</h4>
-                                                <p>'.$options['eewee_carousel_desc_'.$i].'</p>
+                                                <h1>'.$options['eewee_carousel_title_'.$i].'</h1>
+                                                <p>'.$options['eewee_carousel_desc_'.$i].'</p>';
+                                            
+                                                if( !empty($options['eewee_carousel_url_'.$i]) ){
+                                                    $a .= '
+                                                    <p>
+                                                        <a href="'.$options['eewee_carousel_url_'.$i].'" class="btn btn-primary">
+                                                            '.__("Read more", "eewee-bt").'...
+                                                        </a>
+                                                    </p>';
+                                                }
+                                            
+                                            $a .= '
                                             </div>';
                                         }
                                         
