@@ -3,6 +3,19 @@
 
 == VERSION ==
 
+= 0.5.4 =
+* Fixed FO : news
+
+= 0.5.3 =
+* Fixed : content-aside
+
+= 0.5.2 =
+* Fixed BO : appearance
+* Fixed BO : Carousel
+
+= 0.5.1 =
+* Correction license
+
 = 0.5 =
 * Fixed footer information (social network, fax, ...)
 * Fixed BO : url logo

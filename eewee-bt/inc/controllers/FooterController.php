@@ -12,10 +12,11 @@
                 // HOOK FOOTER 
                 function eewee_footer_actu_rs(){ ?>
 
-                    <div id="page" class="hfeed <?php echo ToolsController::getPageSize(); ?>">
+                    <div id="page" class="hfeed">
                         
-                        <div class="row-fluid"><?php
-                            ?><div class="span4 footer-article"><?php
+                        <h3><?php _e("Our news", "eewee-bt"); ?></h3>
+                        <div class="row-fluid footer1">
+                            <div class="span4 footer-article"><?php
 
                                 // get posts
                                 $args = array(
@@ -67,36 +68,72 @@
 
 
 
-                        <div class="row-fluid">
+                        <div class="row-fluid footer2">
                             <div class="span8">
                                 <?php
-                                wp_nav_menu( 
-                                    array(
-                                        'theme_location'  => 'footer_menu',
-                                        'menu'            => '', 
-                                        'container'       => 'div', 
-                                        'container_class' => 'menu-footer-container',
-                                        'container_id'    => '',
-                                        'menu_class'      => 'menu', 
-                                        'menu_id'         => '',
-                                        'echo'            => true,
-                                        'fallback_cb'     => 'wp_page_menu',
-                                        'before'          => '',
-                                        'after'           => '',
-                                        'link_before'     => '',
-                                        'link_after'      => '',
-                                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                        'depth'           => 2,
-                                        'walker'          => ''
-                                    )
-                                );
-                                ?>
+                                if( has_nav_menu('footer_menu') ){
+                                    wp_nav_menu( 
+                                        array(
+                                            'theme_location'  => 'footer_menu',
+                                            'menu'            => '', 
+                                            'container'       => 'div', 
+                                            'container_class' => 'menu-footer-container',
+                                            'container_id'    => '',
+                                            'menu_class'      => 'menu', 
+                                            'menu_id'         => '',
+                                            'echo'            => true,
+                                            'fallback_cb'     => 'wp_page_menu',
+                                            'before'          => '',
+                                            'after'           => '',
+                                            'link_before'     => '',
+                                            'link_after'      => '',
+                                            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                            'depth'           => 2,
+                                            'walker'          => ''
+                                        )
+                                    );
+                                }else{
+                                    global $post;
+                                    $args = array(
+                                        'sort_order' => 'ASC',
+                                        'sort_column' => 'ID',
+                                        'hierarchical' => 1,
+                                        'exclude' => '',
+                                        'include' => '',
+                                        'meta_key' => '',
+                                        'meta_value' => '',
+                                        'authors' => '',
+                                        'child_of' => 0,
+                                        'parent' => 0,
+                                        'exclude_tree' => '',
+                                        'number' => '',
+                                        'offset' => 0,
+                                        'post_type' => 'page',
+                                        'post_status' => 'publish'
+                                    ); 
+                                    $sitePages = get_pages($args); 
+                                    //echo "<pre>"; var_dump( $sitePages ); echo "</pre>";
+                                    $liMenu = "";
+                                    foreach( $sitePages as $sitePage ){
+                                        if( $post->ID == $sitePage->ID ){
+                                            $class = "active";
+                                        }else{
+                                            $class = "";
+                                        }
+                                        $liMenu .= "<li class='".$class."'><a href='".get_permalink( $sitePage->ID )."'>".$sitePage->post_title."</a></li>";
+                                    } ?>
+                                
+                                    <ul class="nav nav-pills">
+                                        <?php echo $liMenu; ?>
+                                    </ul>
+                                
+                                <?php }//else ?>
                             </div>
                             <div class="span4 about-company">
                                 <h3><?php _e("A propos", "eewee-bt"); ?></h3>
                                 <?php $options = get_option('eewee_options'); ?>
                                 <span itemprop="description" itemscope itemtype="http://data-vocabulary.org/Thing">
-                                    <div class='pull-left'><img src='<?php echo esc_attr($options['eewee_general_logo']); ?>' width='100px' /></div>
+                                    <div class='pull-left'><img src='<?php echo esc_attr($options['eewee_general_logo']); ?>' width='100px' class='footer-logo' /></div>
                                     <?php echo esc_attr($options['eewee_address_about']); ?>
                                 </span>
                             </div>
@@ -167,7 +204,7 @@
                                 <?php if( !empty($options['eewee_address_fax']) ){ ?>    
                                     <abbr title="Fax"><?php _e("Fax", "eewee-bt"); ?></abbr> <span itemprop="faxNumber"><?php echo esc_attr($options['eewee_address_fax']); ?></span>
                                 <?php } ?>
-                                <br />
+                                
 
                                 <i class="icon-envelope"></i> 
                                 <span itemprop="email"><a href="mailto:<?php echo esc_attr($options['eewee_address_email']); ?>"><?php echo esc_attr($options['eewee_address_email']); ?></a></span>

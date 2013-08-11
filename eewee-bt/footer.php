@@ -23,5 +23,6 @@
 
 <?php wp_footer(); ?>
 
+</div><?php // eewee-container-standard ?>
 </body>
 </html>

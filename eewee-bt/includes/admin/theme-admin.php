@@ -78,7 +78,7 @@ function eewee_options_sidebar() {
                 <p><?php _e('Name', 'eewee-bt'); ?>: <?php echo $theme_data->Name; ?><br/>
                 <?php _e('Version', 'eewee-bt'); ?>: <b><?php echo $theme_data->Version; ?></b>
                 <a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php _e('(Changelog)', 'eewee-bt'); ?></a><br/>
-                <?php _e('Author', 'eewee-bt'); ?>: <a href="http://www,eewee,fr/" target="_blank">eewee.fr</a><br/>
+                <?php _e('Author', 'eewee-bt'); ?>: <a href="http://www.eewee.fr/" target="_blank">eewee.fr</a><br/>
                 </p>
             </dd>
         </dl>
@@ -380,19 +380,21 @@ function eewee_options_manual_screen() {
             <div class="container">
                 <h1><?php _e('Create colonne', 'eewee-bt'); ?></h1>
                 
-                <p><strong>[eewee-col][eewee-col]</strong></p>
-                <p>f : <?php _e('content of your message', 'eewee-bt'); ?></p>
-                <p>t1 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
-                <p>t2 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
-                <p>t3 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
-                <p>t4 : <?php _e('size colonne', 'eewee-bt'); ?> (1-12)</p>
-                <p>m1 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
-                <p>m2 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
-                <p>m3 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
-                <p>m4 : <?php _e('message', 'eewee-bt'); ?> (1-12)</p>
+                <p><strong>[eewee-col]</strong></p>
+                <?php /*<p>f : <?php _e('content of your message', 'eewee-bt'); ?> (<?php _e('fluid or empty', 'eewee-bt'); ?>)</p> */ ?>
+                <p>numcol : <?php _e('number of column', 'eewee-bt'); ?> (1-12)</p>
+                <p>pos: <?php _e('indispensable for the last column', 'eewee-bt'); ?> (start, last)</p>
                 
                 <p><strong><?php _e("Example", "eewee-bt"); ?> : </strong></p>
-                <p>[eewee-col]</p>
+                <p>2 col</p>
+                <p>[eewee-col numcol="6" pos="start"]xxx[/eewee-col][eewee-col numcol="6" pos="last"]xxx[/eewee-col]</p>
+                <p>3 col</p>
+                <p>[eewee-col numcol="4" pos="start"]xxx[/eewee-col][eewee-col numcol="4"]xxx[/eewee-col][eewee-col numcol="4" pos="last"]xxx[/eewee-col]</p>
+                <p>4 col</p>
+                <p>[eewee-col numcol="3" pos="start"]xxx[/eewee-col][eewee-col numcol="3"]xxx[/eewee-col][eewee-col numcol="3"]xxx[/eewee-col][eewee-col numcol="3" pos="last"]xxx[/eewee-col]</p>
+                <p><?php _e("Copy / paste", "eewee-bt"); ?> : </p>
+                [eewee-col numcol="3" pos="start"]<br /><strong>TITLE 1<br /></strong>xxx xxx xxx<br />[/eewee-col][eewee-col numcol="3"]<br /><strong>TITLE 2<br /></strong>xxx xxx xxx<br />[/eewee-col][eewee-col numcol="3"]<br /><strong>TITLE 3<br /></strong>xxx xxx xxx<br />[/eewee-col][eewee-col numcol="3" pos="last"]<br /><strong>TITLE 4<br /></strong>xxx xxx xxx<br />[/eewee-col]
+                
             </div>
 
 

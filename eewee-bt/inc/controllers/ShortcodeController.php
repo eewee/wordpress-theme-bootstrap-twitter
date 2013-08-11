@@ -190,29 +190,21 @@
 		public function eewee_shortcode_col( $atts='', $content=null ){
                     extract(shortcode_atts(array(
                     'f'   => 'fluid',
-                    't1'  => '',
-                    't2'  => '',
-                    't3'  => '',
-                    't4'  => '',
-                    'm1'  => '',
-                    'm2'  => '',
-                    'm3'  => '',
-                    'm4'  => ''
+                    'numcol'  => '',
+                    'pos' => '' // start, end, last
                     ), $atts));
                     
-                    if( $f == "fluid" ){ $f = '-fluid'; }
-                    if( empty($t1) ){ $a1 = '<div class="span'.$t1.'">'.$m1.'</div>'; }
-                    if( empty($t2) ){ $a2 = '<div class="span'.$t2.'">'.$m2.'</div>'; }
-                    if( empty($t3) ){ $a3 = '<div class="span'.$t3.'">'.$m3.'</div>'; }
-                    if( empty($t4) ){ $a4 = '<div class="span'.$t4.'">'.$m4.'</div>'; }
+                    $a = $div = "";
                     
-                    $a = '
-                    <div class="row'.$f.'">
-                        '.$a1.'
-                        '.$a2.'
-                        '.$a3.'
-                        '.$a4.'
-                    </div>';
+                    if( $f == "fluid" ){ $f = '-fluid'; }
+                    if( !empty($numcol) ){ $div = '<div class="span'.$numcol.'">'; }
+
+                    if( $pos == "start" ){ $a = '<div class="row'.$f.'">'; }
+                        $a .= $div;
+                            $a .= $content;
+                        $a .= "</div>";
+                    if( $pos == "last" ){ $a .= '</div>'; }
+                    
                     return $a;
                 }
                 
@@ -405,7 +397,7 @@
 			});
 			</script>';*/
 			
-			return $d;
+                        return $d;
 		}
 		
 		
@@ -581,7 +573,18 @@
                         }else{
                             $qty = 10;
                         }
+                        ?>
+
+                        <script type="text/javascript">
+                            jQuery(document).ready(function() {
+                                jQuery('.carousel').carousel({
+                                    interval: 4000,
+                                    pause: 'hover'
+                                })
+                            });
+                        </script>
                         
+                        <?php
                         $a = '
                         <div id="myCarousel" class="carousel slide">';
                             /*

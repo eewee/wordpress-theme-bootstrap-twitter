@@ -4,8 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage eewee-bt
+ * @since eewee-bt 1.0
  */
 ?>
 
@@ -35,7 +35,6 @@
 		<?php endif; ?>
 
 		<footer class="entry-meta">
-			<?php twentyeleven_posted_on(); ?>
 			<?php if ( comments_open() ) : ?>
 			<span class="sep"> | </span>
 			<span class="comments-link"><?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'eewee-bt' ) . '</span>', __( '<b>1</b> Reply', 'eewee-bt' ), __( '<b>%</b> Replies', 'eewee-bt' ) ); ?></span>

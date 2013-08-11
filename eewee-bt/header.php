@@ -25,6 +25,10 @@
 <meta name="viewport" content="width=device-width, initial-scale1.0" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
+<?php // Bootstrap twitter ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri().'/css/bootstrap-twitter/bootstrap.min.css'; ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri().'/css/bootstrap-twitter/bootstrap-responsive.min.css'; ?>" />
+<?php // Css ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
@@ -95,6 +99,7 @@
 /***********************************
  *  MENU
  ***********************************/
+if( has_nav_menu('top_menu') ){
 ?>
 <div class="navbar navbar-static">
     <div class="navbar-inner">
@@ -126,13 +131,56 @@
         </div><!-- container -->
     </div><!-- navbar-inner -->
 </div><!-- navbar -->    
+<?php }else{
 
+    $args = array(
+	'sort_order' => 'ASC',
+	'sort_column' => 'ID',
+	'hierarchical' => 1,
+	'exclude' => '',
+	'include' => '',
+	'meta_key' => '',
+	'meta_value' => '',
+	'authors' => '',
+	'child_of' => 0,
+	'parent' => 0,
+	'exclude_tree' => '',
+	'number' => '',
+	'offset' => 0,
+	'post_type' => 'page',
+	'post_status' => 'publish'
+    ); 
+    $sitePages = get_pages($args); 
+    //echo "<pre>"; var_dump( $sitePages ); echo "</pre>";
+    $liMenu = "";
+    foreach( $sitePages as $sitePage ){
+        if( $post->ID == $sitePage->ID ){
+            $class = "active";
+        }else{
+            $class = "";
+        }
+        $liMenu .= "<li class='".$class."'><a href='".get_permalink( $sitePage->ID )."'>".$sitePage->post_title."</a></li>";
+    } ?>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#"><?php bloginfo("name"); ?></a>
+            <ul class="nav">
+                <?php echo $liMenu; ?>
+            </ul>
+
+            <form method="get" action="<?php echo home_url( '/' ); ?>" id="search-form" class="navbar-search pull-right">
+                <input class="search-query input-small" name="s" type="text" placeholder="Search">
+            </form>
+        </div>
+    </div>
+
+<?php }//else ?>
     
     
     
     
-    
-<div id="page" class="hfeed <?php echo ToolsController::getPageSize(); ?>">
+<div class="<?php echo ToolsController::getPageSize(); ?>">    
+<div id="page" class="hfeed">
     
     <?php /*
     <div class="row-fluid">
